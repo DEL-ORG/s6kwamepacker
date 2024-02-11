@@ -8,7 +8,7 @@ packer {
 }
 
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "s6kwame-ami-linux-aws"
+  ami_name      = "s6kwame-ami-ubuntu-aws"
   instance_type = "t2.micro"
   region        = "us-east-1"
   source_ami_filter {
@@ -24,7 +24,7 @@ source "amazon-ebs" "ubuntu" {
 }
 
 build {
-  name    = "s6kwame-packer"
+  name    = "s6kwameAMI-packer"
   sources = ["source.amazon-ebs.ubuntu"]
 
   provisioner "shell" {
